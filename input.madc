@@ -1,8 +1,13 @@
-#include <print>
+func do_something() -> bool:
+    print("Hello, wide world!")
+    return true
 
 func main() -> int:
-    if 2 * 2 == 4:
-        print("NIGGERS IN PARIS!\n")
-        print("How's it going tho?")
+    if do_something() and 4 * 5 > 4:
+        pass
+        print("Does it work?")
+
+    print(1+2)
+
     return 0
     

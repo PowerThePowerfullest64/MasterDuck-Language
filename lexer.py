@@ -118,6 +118,14 @@ def translate(word: str) -> str:
         return ""
     if word == ":":
         return ""
+    if word == "True":
+        return "true"
+    if word == "False":
+        return "false"
+    if word == "None":
+        return "nullptr"
+    if word == "pass":
+        return ""
     return word
 
 
