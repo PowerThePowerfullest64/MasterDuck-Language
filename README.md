@@ -9,9 +9,8 @@ writes `output.cpp` beside `lexer.py`.
 
 The current translator supports top-level `#include` directives, typed
 `func` declarations, `if` blocks, `return`, `print(...)`, and indentation with
-four spaces per level. `print(...)` is emitted as `std::print`, so the generated
-C++ requires C++23 support and `#include <print>`.
+four spaces per level. `print(...)` is emitted as `std:cout`.
 
 This is still a small language prototype, not a complete parser. Unsupported
-syntax such as loops, classes, and imports should not be expected to translate
+syntax such as classes, and imports should not be expected to translate
 correctly yet.
