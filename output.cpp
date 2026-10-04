@@ -1,14 +1,17 @@
 #include <iostream>
 
-bool do_something(){
-	std::cout << "Hello, wide world!" << "\n";
-	return true;
+int fib(int n){
+	if (n <= 0){
+		return 0;
+	}
+	if (n == 1){
+		return 1;
+	}
+	return fib ( n - 1 ) + fib ( n - 2 );
 }
 int main(){
-	if (do_something ( ) && 4 * 5 > 4){
-		// pass
-		std::cout << "Does it work?" << "\n";
+	for (int i = 0; i < 45; i++){
+		std::cout << fib ( i ) << "\n";
 	}
-	std::cout << 1 + 2 << "\n";
 	return 0;
 }
