@@ -8,7 +8,12 @@ func fib(n: int) -> int:
 
 
 func main() -> int:
-    for i in range(45):
-        print(fib(i))
+    fibs: array[int, 43]
+    
+    for i in range(fibs.length()):
+        fibs[i] = fib(i)
+
+    for n in fibs:
+        print(n)
 
     return 0
