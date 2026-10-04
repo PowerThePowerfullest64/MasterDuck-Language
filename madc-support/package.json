@@ -1,0 +1,19 @@
+{
+  "name": "madc-support",
+  "displayName": "MADC",
+  "version": "0.0.1",
+  "engines": { "vscode": "^1.80.0" },
+  "contributes": {
+    "languages": [{
+      "id": "madc",
+      "aliases": ["MADC"],
+      "extensions": [".madc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "madc",
+      "scopeName": "source.madc",
+      "path": "./syntaxes/madc.tmLanguage.json"
+    }]
+  }
+}

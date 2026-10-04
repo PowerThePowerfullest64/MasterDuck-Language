@@ -1,0 +1,65 @@
+{
+  "scopeName": "source.madc",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#function-definition" },
+    { "include": "#variable-declaration" },
+    { "include": "#function-call" },
+    { "include": "#variable" }
+  ],
+  "repository": {
+    "comments": {
+      "match": "//.*$",
+      "name": "comment.line.double-slash.madc"
+    },
+    "keywords": {
+      "match": "\\b(if|else|while|return|func|True|true|False|false|print|range)\\b",
+      "name": "keyword.control.madc"
+    },
+    "strings": {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double.madc",
+      "patterns": [
+        { "match": "\\\\.", "name": "constant.character.escape.madc" }
+      ]
+    },
+    "numbers": {
+      "match": "\\b\\d+(\\.\\d+)?\\b",
+      "name": "constant.numeric.madc"
+    },
+    "function-definition": {
+      "match": "\\b(func)\\s+([A-Za-z_]\\w*)\\s*\\(([^)]*)\\)",
+      "captures": {
+        "1": { "name": "storage.type.function.madc" },
+        "2": { "name": "entity.name.function.madc" },
+        "3": {
+          "patterns": [
+            { "match": "[A-Za-z_]\\w*", "name": "variable.parameter.madc" }
+          ]
+        }
+      }
+    },
+
+    "variable-declaration": {
+      "match": "\\b(let|var|const)\\s+([A-Za-z_]\\w*)",
+      "captures": {
+        "1": { "name": "storage.type.madc" },
+        "2": { "name": "variable.other.definition.madc" }
+      }
+    },
+
+    "function-call": {
+      "match": "\\b([A-Za-z_]\\w*)(?=\\s*\\()",
+      "name": "entity.name.function.call.madc"
+    },
+
+    "variable": {
+      "match": "\\b[A-Za-z_]\\w*\\b",
+      "name": "variable.other.madc"
+    }
+  }
+}
