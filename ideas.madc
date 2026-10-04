@@ -1,0 +1,101 @@
+MasterDuck
+.madc
+
+compiled
+statically typed
+C++ x Python
+
+
+syntax:
+    indentation
+NO ; but if you want you can
+
+classes
+int
+float
+list
+array
+
+
+for i in range(10):
+    pass
+
+for (int i = 0; i < 10; ++i) {
+    continue;
+}
+
+for (auto i : list) {
+    i = 5;
+}
+
+
+madc:
+func add(a: int, b: int) -> int:
+    return a + b
+
+C++:
+int add(int a, int b) {
+    return a + b;
+}
+
+madc:
+list[int] my_list = {0, 1, 2, 3}
+
+C++:
+std::vector<int> my_list = {0, 1, 2, 3};
+
+madc:
+func fib(n: int) -> int:
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+C++:
+int fib(int n) {
+    if (n < 2)
+        return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+madc:
+my_array: array[int, 10] = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+my_array[1]
+
+C++:
+std::array<int, 2> my_array = {1, 2};
+
+madc:
+my_dict: dict[str, int] = {"item": 1}
+
+mydict["item"] = 5
+
+
+C++:
+std::unordered_map<std::string, int> my_dict
+
+
+madc:
+
+import item
+import item as name
+
+C++:
+#include <iostream>
+#define item name
+
+madc:
+// hello!
+
+C++:
+None
+
+
+The Lexer (Scanner): Reads characters one by one, strips comments and whitespace, and groups text into categorized tokens:
+
+fn double(n: int): int {
+    return n * 2;
+}
+
+[FN, IDENT("double"), LPAREN, IDENT("n"), COLON, TYPE("int"), RPAREN, 
+ COLON, TYPE("int"), LBRACE, RETURN, IDENT("n"), STAR, INT(2), SEMICOLON, RBRACE]

@@ -1,0 +1,8 @@
+#include <print>
+
+func main() -> int:
+    if 2 * 2 == 4:
+        print("NIGGERS IN PARIS!\n")
+        print("How's it going tho?")
+    return 0
+    
