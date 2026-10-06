@@ -7,7 +7,7 @@ TOKEN_RE = re.compile(r'''
   | (?P<NUMBER>\d+(?:\.\d+)?)
   | (?P<NAME>[A-Za-z_]\w*)
   | (?P<ARROW>->)
-  | (?P<OP>==|!=|<=|>=|[+\-*/%<>=])
+  | (?P<OP>==|!=|<=|>=|>>|<<|[+\-*/%<>=])
   | (?P<PUNCT>[(){}\[\],:.])
   | (?P<SKIP>[ ]+)
 ''', re.VERBOSE)
